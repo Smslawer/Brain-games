@@ -6,3 +6,5 @@
 https://asciinema.org/a/EAZfGRGkp0VFYxQVW4OWeRSUV
 ## Аскинема с примером запуска игры №2(Calc), победой и поражением игрока. 
 https://asciinema.org/a/83CfEsOrGremYSzkJFyKSBCIt
+## Аскинема с примером запуска игры №3(GCD), победой и поражением игрока. 
+https://asciinema.org/a/yHvnWBnfG8adgTIv8PchQpT3h

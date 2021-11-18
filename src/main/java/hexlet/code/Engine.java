@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Engine {
     private static final int NUMBER_OF_TRIES = 3;
-    private static final int COUNT_OF_NUMBER = 10;
+    private static final int COUNT_OF_NUMBER = 20;
     private static String currentName = "";
 
     public static void greet() {

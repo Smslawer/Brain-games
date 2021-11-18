@@ -19,7 +19,7 @@ public class GameEven {
 
         System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
         while (counter < Engine.getNumberOfTrueTries()) {
-            int number = (int) (Math.random() * Engine.getNumberOfTrueTries());
+            int number = (int) (1 + Math.random() * Engine.getNumberOfTrueTries());
             System.out.println("Question: " + number);
             usersAnswer = trueAnswer.nextLine();
             System.out.println("Your answer: " + usersAnswer);
