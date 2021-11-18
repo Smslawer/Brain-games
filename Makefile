@@ -1,5 +1,5 @@
-#install:
-#	./gradlew clean	install
+install:
+	./gradlew clean	install
 
 run-dist:
 	./gradlew run
