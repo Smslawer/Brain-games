@@ -40,4 +40,16 @@ public class Engine {
         return operators[i];
     }
 
+    public static int getFirstNumber() {
+        int firstNumber = (int) (2 + Math.random() * COUNT_OF_NUMBER);
+        return firstNumber;
+    }
+
+    public static int getSecondNumber() {
+        int secondNumber = (int) (2 + Math.random() * COUNT_OF_NUMBER);
+        return secondNumber;
+    }
+
+
+
 }
