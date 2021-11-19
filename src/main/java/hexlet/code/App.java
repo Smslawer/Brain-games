@@ -1,9 +1,10 @@
 package hexlet.code;
 
+import hexlet.code.games.GameEven;
 import hexlet.code.games.Calc;
 import hexlet.code.games.GCD;
-import hexlet.code.games.GameEven;
 import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
 
 
 import java.util.Scanner;
@@ -23,6 +24,7 @@ public class App {
                 3 - Calc
                 4 - GCD
                 5 - Progression
+                6 - Prime
                 0 - Exit""");
         if (numberOfGame.hasNextInt()) {
             int number = numberOfGame.nextInt();
@@ -44,6 +46,9 @@ public class App {
             } else if (number == NUMBER_OF_GAME_5) {
                 System.out.println("Your choice: " + number);
                 Progression.progress();
+            } else if (number == NUMBER_OF_GAME_6) {
+                System.out.println("Your choice: " + number);
+                Prime.isPrime();
             }
         } else {
             System.out.println("Вы не ввели номер игры. Перезапустите программу и попробуйте снова.");

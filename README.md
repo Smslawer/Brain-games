@@ -10,3 +10,5 @@ https://asciinema.org/a/83CfEsOrGremYSzkJFyKSBCIt
 https://asciinema.org/a/yHvnWBnfG8adgTIv8PchQpT3h
 ## Аскинема с примером запуска игры №4(GCD), победой и поражением игрока.
 https://asciinema.org/a/FbnYP8oub5mSVLniyibrUeZgS 
+## Аскинема с примером запуска игры №5(Prime), победой и поражением игрока.
+https://asciinema.org/a/bxQLOtGKebednk8l7z9MwsrW0

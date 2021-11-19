@@ -1,26 +1,26 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+
+import java.math.BigInteger;
 import java.util.Scanner;
 
-public class GameEven {
-    public static void even() {
+public class Prime {
+    public static void isPrime() {
         int counter = 0;
-        String correctAnswer = "";
+        String correctAnswer = "no";
         String usersAnswer = "";
-
         Engine.greet();
 
         if (Engine.getUsersName().equals("")) {
             return;
         }
-
         Scanner trueAnswer = new Scanner(System.in);
 
-        System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
+        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'");
         while (counter < Engine.getNumberOfTrueTries()) {
-            int number = (int) (1 + Math.random() * Engine.getNumberOfTrueTries());
-            System.out.println("Question: " + number);
+            Integer primeNumber = (Integer) Engine.getFirstNumber();
+            System.out.println("Question: " + primeNumber);
             if (trueAnswer.hasNextInt()) {
                 System.out.println("Answer must be 'yes' or 'no'! Let's tru again, " + Engine.getUsersName());
                 return;
@@ -29,13 +29,15 @@ public class GameEven {
                 System.out.println("Your answer: " + usersAnswer);
             }
 
-            if (number % 2 == 0) {
+            BigInteger bigInteger = BigInteger.valueOf(primeNumber);
+            boolean probablePrime = bigInteger.isProbablePrime((int) Math.log(primeNumber));
+
+            if (probablePrime) {
                 correctAnswer = "yes";
             } else {
                 correctAnswer = "no";
             }
-
-            if ((number % 2 == 0 && usersAnswer.equals("yes")) || (number % 2 != 0 && usersAnswer.equals("no"))) {
+            if (correctAnswer.equals(usersAnswer)) {
                 System.out.println("Correct!");
                 counter++;
             } else {
