@@ -38,6 +38,7 @@ public class Progression {
                     String secondArray = Arrays.toString(secondTmp);
                     secondArray = secondArray.substring(1, secondArray.length() - 1);
                     question = firstArray + " .. " + secondArray;
+                    question = question.replaceAll("[,]", "");
                 }
             }
             for (int k = 0; k < questionAndAnswer[i].length; k++) {
