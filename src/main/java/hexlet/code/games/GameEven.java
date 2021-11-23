@@ -1,52 +1,21 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import java.util.Scanner;
 
 public class GameEven {
+    static final String DESCRIPTION = "Answer 'yes' if number even otherwise answer 'no'.";
+    static final int COUNTER = 1;
     public static void even() {
-        int counter = 0;
-        String correctAnswer = "";
-        String usersAnswer = "";
-
-        Engine.greet();
-
-        if (Engine.getUsersName().equals("")) {
-            return;
-        }
-
-        Scanner trueAnswer = new Scanner(System.in);
-
-        System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
-        while (counter < Engine.getNumberOfTrueTries()) {
-            int number = (int) (1 + Math.random() * Engine.getNumberOfTrueTries());
-            System.out.println("Question: " + number);
-            if (trueAnswer.hasNextInt()) {
-                System.out.println("Answer must be 'yes' or 'no'! Let's tru again, " + Engine.getUsersName());
-                return;
-            } else {
-                usersAnswer = trueAnswer.nextLine();
-                System.out.println("Your answer: " + usersAnswer);
-            }
-
-            if (number % 2 == 0) {
-                correctAnswer = "yes";
-            } else {
-                correctAnswer = "no";
-            }
-
-            if ((number % 2 == 0 && usersAnswer.equals("yes")) || (number % 2 != 0 && usersAnswer.equals("no"))) {
-                System.out.println("Correct!");
-                counter++;
-            } else {
-                System.out.println("'" + usersAnswer + "'" + " is wrong answer. Correct answer was "
-                        + "'" + correctAnswer + "'" + ". Let's try again, " + Engine.getUsersName() + "!");
-                counter = 0;
+        String[][] questionAndAnswer = new String[Engine.getNumberOfTrueTries()][2];
+        for (int i = 0; i < Engine.getNumberOfTrueTries(); i++) {
+            int number = (int) (1 + Math.random() * Engine.getCountOfNumbers());
+            for (int k = 0; k < questionAndAnswer[i].length; k++) {
+                questionAndAnswer[i][k] = String.valueOf(number);
+                questionAndAnswer[i][COUNTER] = ((number % 2) == 0) ? "yes" : "no";
             }
         }
-        System.out.println("Congratulations, " + Engine.getUsersName() + "!");
-        counter = 0;
-        correctAnswer = "";
+
+        Engine.greet(DESCRIPTION, questionAndAnswer);
 
     }
 
