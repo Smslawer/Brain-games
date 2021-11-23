@@ -9,15 +9,16 @@ public class Progression {
 
     static final String DESCRIPTION = "What number is missing in the progression?";
     static final int COUNTER = 1;
+    static final int STARTOFPROGRESSION = 5;
     public static void progress() {
         String[][] questionAndAnswer = new String[Engine.getNumberOfTrueTries()][2];
         for (int i = 0; i < Engine.getNumberOfTrueTries(); i++) {
             String question = "";
             int correctAnswer = 0;
-            int firstNumber = Engine.getFirstNumber();
+            int arrLength = (int) (STARTOFPROGRESSION + Math.random() * Engine.getCountOfNumbers());
             int secondNumber = Engine.getSecondNumber();
-            int[] sum = new int[firstNumber + 1];
-            for (int j = 0; j <= firstNumber; j++) {
+            int[] sum = new int[arrLength + 1];
+            for (int j = 0; j <= arrLength; j++) {
                 secondNumber += 2;
                 sum[j] = secondNumber;
             }
