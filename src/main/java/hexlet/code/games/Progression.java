@@ -36,7 +36,7 @@ public class Progression {
                     System.arraycopy(sum, g + 1, secondTmp, 0, sum.length - (g + 1));
                     String secondArray = Arrays.toString(secondTmp);
                     secondArray = secondArray.substring(1, secondArray.length() - 1);
-                    question = firstArray + " . . " + secondArray;
+                    question = firstArray + " .. " + secondArray;
                 }
             }
             for (int k = 0; k < questionAndAnswer[i].length; k++) {
