@@ -1,5 +1,6 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Smslawer/java-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Smslawer/java-project-lvl1/actions)
+[![Actions example](https://github.com/Smslawer/java-project-lvl1/workflows/actions-example/badge.svg)](https://github.com/Smslawer/java-project-lvl1/actions)
 <a href="https://codeclimate.com/github/Smslawer/java-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/935d45b347e907028500/maintainability" /></a>
 ## Аскинема с примером запуска игры №1(Even), победой и поражением игрока.  
 <a href="https://asciinema.org/a/EAZfGRGkp0VFYxQVW4OWeRSUV" target="_blank">
