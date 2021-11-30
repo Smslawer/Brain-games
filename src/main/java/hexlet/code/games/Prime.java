@@ -19,6 +19,7 @@ public class Prime {
         }
         Engine.greet(DESCRIPTION, questionAndAnswer);
     }
+    //почему то падает на цифре 15 тест, но у меня в консоли не падает
 
     private static boolean isProbablePrime(Integer primeNumber) {
         BigInteger bigInteger = BigInteger.valueOf(primeNumber);
