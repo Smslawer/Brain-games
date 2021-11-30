@@ -15,26 +15,20 @@ public class Progression {
         for (int i = 0; i < Engine.getNumberOfTrueTries(); i++) {
             String question = "";
             int correctAnswer = 0;
-            int arrLength = (int) (STARTOFPROGRESSION + Math.random() * Engine.getCountOfNumbers());
-            int secondNumber = Engine.getSecondNumber();
-            int[] sum = new int[arrLength + 1];
-            for (int j = 0; j <= arrLength; j++) {
-                secondNumber += 2;
-                sum[j] = secondNumber;
-            }
+            int[] progression =  setProgression();
             Random random = new Random();
-            int it = random.nextInt(sum.length);
-            for (int g = 0; g < sum.length; g++) {
-                if (sum[g] == sum[it]) {
-                    correctAnswer = sum[g];
+            int it = random.nextInt(progression.length);
+            for (int g = 0; g < progression.length; g++) {
+                if (progression[g] == progression[it]) {
+                    correctAnswer = progression[g];
 
                     int[] firstTmp = new int[g];
-                    System.arraycopy(sum, 0, firstTmp, 0, g);
+                    System.arraycopy(progression, 0, firstTmp, 0, g);
                     String firstArray = Arrays.toString(firstTmp);
                     firstArray = firstArray.substring(1, firstArray.length() - 1);
 
-                    int[] secondTmp = new int[sum.length - (g + 1)];
-                    System.arraycopy(sum, g + 1, secondTmp, 0, sum.length - (g + 1));
+                    int[] secondTmp = new int[progression.length - (g + 1)];
+                    System.arraycopy(progression, g + 1, secondTmp, 0, progression.length - (g + 1));
                     String secondArray = Arrays.toString(secondTmp);
                     secondArray = secondArray.substring(1, secondArray.length() - 1);
                     question = firstArray + " .. " + secondArray;
@@ -48,5 +42,17 @@ public class Progression {
         }
         Engine.greet(DESCRIPTION, questionAndAnswer);
     }
+
+    private static int[] setProgression() {
+        int arrLength = (int) (STARTOFPROGRESSION + Math.random() * Engine.getCountOfNumbers());
+        int secondNumber = Engine.getRandomNumber();
+        int[] sum = new int[arrLength + 1];
+        for (int j = 0; j <= arrLength; j++) {
+            secondNumber += 2;
+            sum[j] = secondNumber;
+        }
+        return sum;
+    }
+
 
 }

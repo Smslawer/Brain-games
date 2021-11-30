@@ -8,7 +8,7 @@ public class GameEven {
     public static void even() {
         String[][] questionAndAnswer = new String[Engine.getNumberOfTrueTries()][2];
         for (int i = 0; i < Engine.getNumberOfTrueTries(); i++) {
-            int number = (int) (1 + Math.random() * Engine.getCountOfNumbers());
+            int number = Engine.getRandomNumber();
             for (int k = 0; k < questionAndAnswer[i].length; k++) {
                 questionAndAnswer[i][k] = String.valueOf(number);
                 questionAndAnswer[i][COUNTER] = ((number % 2) == 0) ? "yes" : "no";

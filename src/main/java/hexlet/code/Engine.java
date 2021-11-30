@@ -1,13 +1,12 @@
 package hexlet.code;
 
-import java.util.Random;
+//import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
     private static final int NUMBER_OF_TRIES = 3;
     private static final int COUNT_OF_NUMBER = 20;
     private static String currentName = "";
-    private static String usersAnswer = "";
 
     public static void greet(String description, String[][] questionAndAnswer) {
         Scanner forGame = new Scanner(System.in);
@@ -16,24 +15,23 @@ public class Engine {
             System.out.println("Извините, имя не может быть числом или знаком! "
                     + "Перезапустите программу и попробуйте снова");
             return;
-        } else {
-            currentName = forGame.nextLine();
-            System.out.println("Hello, " + currentName + "!");
-            System.out.println(description);
-            for (int i = 0; i < NUMBER_OF_TRIES; i++) {
-                System.out.println("Question: " + questionAndAnswer[i][0]);
-                usersAnswer = forGame.nextLine();
-                System.out.println("Your answer: " + usersAnswer);
-                if (usersAnswer.equals(questionAndAnswer[i][1])) {
-                    System.out.println("Correct!");
-                } else {
-                    System.out.println("'" + usersAnswer + "'" + " is wrong answer. Correct answer was "
-                            + "'" + questionAndAnswer[i][1] + "'" + ". Let's try again, " + currentName + "!");
-                    return;
-                }
+        }
+        currentName = forGame.nextLine();
+        System.out.println("Hello, " + currentName + "!");
+        System.out.println(description);
+        for (int i = 0; i < NUMBER_OF_TRIES; i++) {
+            System.out.println("Question: " + questionAndAnswer[i][0]);
+            String usersAnswer = forGame.nextLine();
+            System.out.println("Your answer: " + usersAnswer);
+            if (usersAnswer.equals(questionAndAnswer[i][1])) {
+                System.out.println("Correct!");
+            } else {
+                System.out.println("'" + usersAnswer + "'" + " is wrong answer. Correct answer was "
+                        + "'" + questionAndAnswer[i][1] + "'" + ". Let's try again, " + currentName + "!");
+                return;
             }
         }
-        System.out.println("Congratulations, " + Engine.getUsersName() + "!");
+        System.out.println("Congratulations, " + getUsersName() + "!");
     }
 
     public static int getNumberOfTrueTries() {
@@ -48,22 +46,7 @@ public class Engine {
         return COUNT_OF_NUMBER;
     }
 
-    public static String getOperator() {
-        Random random = new Random();
-        String[] operators = {"+", "-", "*"};
-        int i = random.nextInt(NUMBER_OF_TRIES);
-        return operators[i];
+    public static int getRandomNumber() {
+        return (int) (2 + Math.random() * COUNT_OF_NUMBER);
     }
-
-    public static int getFirstNumber() {
-        int firstNumber = (int) (2 + Math.random() * COUNT_OF_NUMBER);
-        return firstNumber;
-    }
-
-    public static int getSecondNumber() {
-        int secondNumber = (int) (2 + Math.random() * COUNT_OF_NUMBER);
-        return secondNumber;
-    }
-
-
 }
