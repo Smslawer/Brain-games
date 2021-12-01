@@ -31,7 +31,7 @@ public class Progression {
                     System.arraycopy(progression, g + 1, secondTmp, 0, progression.length - (g + 1));
                     String secondArray = Arrays.toString(secondTmp);
                     secondArray = secondArray.substring(1, secondArray.length() - 1);
-                    question = firstArray + " .. " + secondArray;
+                    question = (firstArray + " .. " + secondArray).trim();
                     question = question.replaceAll("[,]", "");
                 }
             }
