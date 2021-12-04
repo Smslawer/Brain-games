@@ -42,28 +42,28 @@ public class App {
                 }
                 case NUMBER_OF_GAME_2 -> {
                     System.out.println("Your choice: " + number);
-                    GameEven.even();
+                    GameEven.runGame();
                 }
                 case NUMBER_OF_GAME_3 -> {
                     System.out.println("Your choice: " + number);
-                    Calc.calculate();
+                    Calc.runGame();
                 }
                 case NUMBER_OF_GAME_4 -> {
                     System.out.println("Your choice: " + number);
-                    GCD.divisor();
+                    GCD.runGame();
                 }
                 case NUMBER_OF_GAME_5 -> {
                     System.out.println("Your choice: " + number);
-                    Progression.progress();
+                    Progression.runGame();
                 }
                 case NUMBER_OF_GAME_6 -> {
                     System.out.println("Your choice: " + number);
-                    Prime.isPrime();
+                    Prime.runGame();
                 }
                 default -> System.out.println("Unexpected value: " + number);
             }
         } else {
-            System.out.println("Вы не ввели номер игры. Перезапустите программу и попробуйте снова.");
+            System.out.println("You didn't enter a game number. Restart the program and try again.");
         }
         numberOfGame.close();
     }

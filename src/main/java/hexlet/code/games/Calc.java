@@ -1,51 +1,53 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 import java.util.Random;
 
 public class Calc {
-    static final String DESCRIPTION = "What is the result of the expression?";
-    static final int COUNTER = 1;
+    private static final String DESCRIPTION = "What is the result of the expression?";
+    private static final int COUNTER = 1;
+    private static final int COUNT_OF_NUMBER = 20;
 
-    public static void calculate() {
-        String[][] questionAndAnswer = new String[Engine.getNumberOfTrueTries()][2];
-        for (int i = 0; i < Engine.getNumberOfTrueTries(); i++) {
-            int firstNumber = Engine.getRandomNumber();
-            int secondNumber = Engine.getRandomNumber();
+    public static void runGame() {
+        String[][] questionAndAnswer = new String[Engine.NUMBER_OF_TRIES][2];
+        for (int i = 0; i < Engine.NUMBER_OF_TRIES; i++) {
+            int firstNumber = Utils.getRandomNumber(COUNT_OF_NUMBER);
+            int secondNumber = Utils.getRandomNumber(COUNT_OF_NUMBER);
             String randomOperator = getOperator();
-            String expression = firstNumber + " " + randomOperator + " " + secondNumber;
+            String question = firstNumber + " " + randomOperator + " " + secondNumber;
             for (int k = 0; k < questionAndAnswer[i].length; k++) {
-                questionAndAnswer[i][k] = expression;
+                questionAndAnswer[i][k] = question;
                 questionAndAnswer[i][COUNTER] = String.valueOf(
                         getTrueAnswer(randomOperator, firstNumber, secondNumber));
             }
         }
 
-        Engine.greet(DESCRIPTION, questionAndAnswer);
+        Engine.compareAndOutput(DESCRIPTION, questionAndAnswer);
     }
 
     private static int getTrueAnswer(String randomOperator, int firstNumber, int secondNumber) {
-        int tmp = 0;
+        int answer = 0;
         switch (randomOperator) {
             case "+" -> {
-                tmp = firstNumber + secondNumber;
+                answer = firstNumber + secondNumber;
             }
             case "-" -> {
-                tmp = firstNumber - secondNumber;
+                answer = firstNumber - secondNumber;
             }
             case "*" -> {
-                tmp = firstNumber * secondNumber;
+                answer = firstNumber * secondNumber;
             }
             default -> System.out.println("Unexpected value");
         }
-        return tmp;
+        return answer;
     }
 
     private static String getOperator() {
         Random random = new Random();
         String[] operators = {"+", "-", "*"};
-        int i = random.nextInt(Engine.getNumberOfTrueTries());
+        int i = random.nextInt(Engine.NUMBER_OF_TRIES);
         return operators[i];
     }
 

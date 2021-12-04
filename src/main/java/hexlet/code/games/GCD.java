@@ -1,25 +1,27 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class GCD {
-    static final String DESCRIPTION = "Find the greatest common divisor of given numbers.";
-    static final int COUNTER = 1;
+    private static final String DESCRIPTION = "Find the greatest common divisor of given numbers.";
+    private static final int COUNTER = 1;
+    private static final int COUNT_OF_NUMBER = 100;
 
-    public static void divisor() {
+    public static void runGame() {
 
-        String[][] questionAndAnswer = new String[Engine.getNumberOfTrueTries()][2];
-        for (int i = 0; i < Engine.getNumberOfTrueTries(); i++) {
-            int firstNumber = Engine.getRandomNumber();
-            int secondNumber = Engine.getRandomNumber();
-            String commonDivisor = firstNumber + " " + secondNumber;
+        String[][] questionAndAnswer = new String[Engine.NUMBER_OF_TRIES][2];
+        for (int i = 0; i < Engine.NUMBER_OF_TRIES; i++) {
+            int firstNumber = Utils.getRandomNumber(COUNT_OF_NUMBER);
+            int secondNumber = Utils.getRandomNumber(COUNT_OF_NUMBER);
+            String question = firstNumber + " " + secondNumber;
             for (int k = 0; k < questionAndAnswer[i].length; k++) {
-                questionAndAnswer[i][k] = commonDivisor;
+                questionAndAnswer[i][k] = question;
                 int correctAnswer = isGCD(firstNumber, secondNumber);
                 questionAndAnswer[i][COUNTER] = String.valueOf(correctAnswer);
             }
         }
-        Engine.greet(DESCRIPTION, questionAndAnswer);
+        Engine.compareAndOutput(DESCRIPTION, questionAndAnswer);
 
     }
 
