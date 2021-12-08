@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Engine {
     public static final int NUMBER_OF_TRIES = 3;
 
-    public static void compareAndOutput(String description, String[][] questionAndAnswer) {
+    public static void start(String description, String[][] questionAndAnswer) {
         Scanner forGame = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!\n" + "May I have your name?");
         String currentName = forGame.nextLine();

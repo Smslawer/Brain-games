@@ -17,7 +17,7 @@ public class Prime {
             questionAndAnswer[i][0] = String.valueOf(primeNumber);
             questionAndAnswer[i][COUNTER] = (isProbablePrime(primeNumber)) ? "yes" : "no";
         }
-        Engine.compareAndOutput(DESCRIPTION, questionAndAnswer);
+        Engine.start(DESCRIPTION, questionAndAnswer);
     }
 
     private static boolean isProbablePrime(Integer primeNumber) {

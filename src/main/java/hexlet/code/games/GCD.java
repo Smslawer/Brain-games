@@ -21,7 +21,7 @@ public class GCD {
                 questionAndAnswer[i][COUNTER] = String.valueOf(correctAnswer);
             }
         }
-        Engine.compareAndOutput(DESCRIPTION, questionAndAnswer);
+        Engine.start(DESCRIPTION, questionAndAnswer);
 
     }
 

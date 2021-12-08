@@ -22,7 +22,7 @@ public class Progression {
             questionAndAnswer[i][0] = generateQuestion(progression, correctAnswer);
             questionAndAnswer[i][COUNTER] = String.valueOf(progression[correctAnswer]);
         }
-        Engine.compareAndOutput(DESCRIPTION, questionAndAnswer);
+        Engine.start(DESCRIPTION, questionAndAnswer);
     }
 
     private static int[] setProgression() {

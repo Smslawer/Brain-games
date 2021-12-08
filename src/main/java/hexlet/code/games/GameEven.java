@@ -16,7 +16,7 @@ public class GameEven {
             questionAndAnswer[i][COUNTER] = ((number % 2) == 0) ? "yes" : "no";
         }
 
-        Engine.compareAndOutput(DESCRIPTION, questionAndAnswer);
+        Engine.start(DESCRIPTION, questionAndAnswer);
 
     }
 

@@ -24,7 +24,7 @@ public class Calc {
             }
         }
 
-        Engine.compareAndOutput(DESCRIPTION, questionAndAnswer);
+        Engine.start(DESCRIPTION, questionAndAnswer);
     }
 
     private static int getTrueAnswer(String randomOperator, int firstNumber, int secondNumber) {
