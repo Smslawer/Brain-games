@@ -17,11 +17,9 @@ public class Calc {
             int secondNumber = Utils.getRandomNumber(COUNT_OF_NUMBER);
             String randomOperator = getOperator();
             String question = firstNumber + " " + randomOperator + " " + secondNumber;
-            for (int k = 0; k < questionAndAnswer[i].length; k++) {
-                questionAndAnswer[i][k] = question;
-                questionAndAnswer[i][COUNTER] = String.valueOf(
-                        getTrueAnswer(randomOperator, firstNumber, secondNumber));
-            }
+            questionAndAnswer[i][0] = question;
+            questionAndAnswer[i][COUNTER] = String.valueOf(
+                    getTrueAnswer(randomOperator, firstNumber, secondNumber));
         }
 
         Engine.start(DESCRIPTION, questionAndAnswer);

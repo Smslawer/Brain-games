@@ -15,11 +15,9 @@ public class GCD {
             int firstNumber = Utils.getRandomNumber(COUNT_OF_NUMBER);
             int secondNumber = Utils.getRandomNumber(COUNT_OF_NUMBER);
             String question = firstNumber + " " + secondNumber;
-            for (int k = 0; k < questionAndAnswer[i].length; k++) {
-                questionAndAnswer[i][k] = question;
-                int correctAnswer = isGCD(firstNumber, secondNumber);
-                questionAndAnswer[i][COUNTER] = String.valueOf(correctAnswer);
-            }
+            questionAndAnswer[i][0] = question;
+            int correctAnswer = isGCD(firstNumber, secondNumber);
+            questionAndAnswer[i][COUNTER] = String.valueOf(correctAnswer);
         }
         Engine.start(DESCRIPTION, questionAndAnswer);
 
