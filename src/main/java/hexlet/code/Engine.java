@@ -11,6 +11,7 @@ public class Engine {
         String currentName = forGame.nextLine();
         System.out.println("Hello, " + currentName + "!");
         System.out.println(description);
+
         for (int i = 0; i < NUMBER_OF_TRIES; i++) {
             System.out.println("Question: " + questionAndAnswer[i][0]);
             String usersAnswer = forGame.nextLine();
@@ -23,6 +24,7 @@ public class Engine {
                 return;
             }
         }
+
         System.out.println("Congratulations, " + currentName + "!");
     }
 }

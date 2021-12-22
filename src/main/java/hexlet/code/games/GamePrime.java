@@ -5,7 +5,7 @@ import hexlet.code.Utils;
 
 import java.math.BigInteger;
 
-public class Prime {
+public class GamePrime {
     private static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     private static final int COUNTER = 1;
     private static final int COUNT_OF_NUMBER = 30;
@@ -17,6 +17,7 @@ public class Prime {
             questionAndAnswer[i][0] = String.valueOf(primeNumber);
             questionAndAnswer[i][COUNTER] = (isProbablePrime(primeNumber)) ? "yes" : "no";
         }
+
         Engine.start(DESCRIPTION, questionAndAnswer);
     }
 

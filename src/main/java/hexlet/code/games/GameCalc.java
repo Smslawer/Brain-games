@@ -5,7 +5,7 @@ import hexlet.code.Utils;
 
 import java.util.Random;
 
-public class Calc {
+public class GameCalc {
     private static final String DESCRIPTION = "What is the result of the expression?";
     private static final int COUNTER = 1;
     private static final int COUNT_OF_NUMBER = 20;
@@ -45,7 +45,7 @@ public class Calc {
     private static String getOperator() {
         Random random = new Random();
         String[] operators = {"+", "-", "*"};
-        int i = random.nextInt(Engine.NUMBER_OF_TRIES);
+        int i = random.nextInt(operators.length);
         return operators[i];
     }
 

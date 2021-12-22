@@ -1,22 +1,22 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.GCD;
+import hexlet.code.games.GameCalc;
 import hexlet.code.games.GameEven;
-import hexlet.code.games.Prime;
-import hexlet.code.games.Progression;
+import hexlet.code.games.GameGCD;
+import hexlet.code.games.GamePrime;
+import hexlet.code.games.GameProgression;
 
 
 import java.util.Scanner;
 
 public class App {
     private static final int EXIT = 0;
-    private static final int GREET_1 = 1;
-    private static final int NUMBER_OF_GAME_2 = 2;
-    private static final int NUMBER_OF_GAME_3 = 3;
-    private static final int NUMBER_OF_GAME_4 = 4;
-    private static final int NUMBER_OF_GAME_5 = 5;
-    private static final int NUMBER_OF_GAME_6 = 6;
+    private static final int GREET = 1;
+    private static final int EVEN = 2;
+    private static final int CALC = 3;
+    private static final int GCD = 4;
+    private static final int PROGRESSION = 5;
+    private static final int PRIME = 6;
 
     public static void main(String[] args) {
         Scanner numberOfGame = new Scanner(System.in);
@@ -29,41 +29,34 @@ public class App {
                 5 - Progression
                 6 - Prime
                 0 - Exit""");
-        if (numberOfGame.hasNextInt()) {
-            int number = numberOfGame.nextInt();
-            switch (number) {
-                case EXIT -> {
-                    System.out.println("Your choice: " + number + "." + " Good luck!");
-                    return;
-                }
-                case GREET_1 -> {
-                    System.out.println("Your choice: " + number);
-                    Cli.greet();
-                }
-                case NUMBER_OF_GAME_2 -> {
-                    System.out.println("Your choice: " + number);
-                    GameEven.runGame();
-                }
-                case NUMBER_OF_GAME_3 -> {
-                    System.out.println("Your choice: " + number);
-                    Calc.runGame();
-                }
-                case NUMBER_OF_GAME_4 -> {
-                    System.out.println("Your choice: " + number);
-                    GCD.runGame();
-                }
-                case NUMBER_OF_GAME_5 -> {
-                    System.out.println("Your choice: " + number);
-                    Progression.runGame();
-                }
-                case NUMBER_OF_GAME_6 -> {
-                    System.out.println("Your choice: " + number);
-                    Prime.runGame();
-                }
-                default -> System.out.println("Unexpected value: " + number);
+
+        int number = numberOfGame.nextInt();
+        System.out.println("Your choice: " + number);
+        switch (number) {
+            case EXIT -> {
+                System.out.println("Your choice: " + number + "." + " Good luck!");
+                return;
             }
-        } else {
-            System.out.println("You didn't enter a game number. Restart the program and try again.");
+            case GREET -> {
+                Cli.greet();
+            }
+            case EVEN -> {
+                GameEven.runGame();
+            }
+            case CALC -> {
+                GameCalc.runGame();
+            }
+            case GCD -> {
+                GameGCD.runGame();
+            }
+            case PROGRESSION -> {
+                GameProgression.runGame();
+            }
+            case PRIME -> {
+                GamePrime.runGame();
+            }
+            default -> System.out.println("Unexpected value: " + number + ". "
+                    + "You didn't enter a game number. Restart the program and try again.");
         }
         numberOfGame.close();
     }

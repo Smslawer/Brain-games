@@ -5,7 +5,7 @@ import hexlet.code.Utils;
 
 import java.util.Random;
 
-public class Progression {
+public class GameProgression {
 
     private static final String DESCRIPTION = "What number is missing in the progression?";
     private static final int COUNTER = 1;
@@ -23,6 +23,7 @@ public class Progression {
             questionAndAnswer[i][0] = generateQuestion(progression, correctAnswer);
             questionAndAnswer[i][COUNTER] = String.valueOf(progression[correctAnswer]);
         }
+
         Engine.start(DESCRIPTION, questionAndAnswer);
     }
 
@@ -32,6 +33,7 @@ public class Progression {
             firstElement += step;
             sum[j] = String.valueOf(firstElement);
         }
+
         return sum;
     }
 
@@ -43,6 +45,7 @@ public class Progression {
                 question = String.join(".. ", question, number).replaceAll(number, "").trim();
             }
         }
+
         return question;
     }
 }
